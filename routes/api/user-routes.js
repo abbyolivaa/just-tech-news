@@ -4,14 +4,12 @@ const { User } = require('../../models');
 // GET api/users
 router.get('/', (req, res) => {
     // Access our User model and run .findAll() method)
-    User.findAll({
-        attributes: { exclude: ['password'] }
-    })
+    User.findAll()
     .then(dbUserData => res.json(dbUserData))
-    .catch(err =>{
+    .catch(err => {
         console.log(err);
         res.status(500).json(err)
-    })
+    });
 });
 
 // GET /api/users/1
