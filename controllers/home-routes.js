@@ -90,7 +90,7 @@ router.get('/post/:id', (req, res)=> {
       // pass data to template
       res.render('single-post', { 
         post,
-        loggediN:req.session.loggedIn
+        loggedIn:req.session.loggedIn
       });
     })
     .catch(err => {
